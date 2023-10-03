@@ -15,6 +15,8 @@ export const initialize = async () => {
         });
 
         if (users.length !== 0) {
+            await ctx.reply('Welcome back!');
+
             return;
         }
 
@@ -22,6 +24,8 @@ export const initialize = async () => {
         user.userId = ctx.from.id;
 
         await saveUser(user);
+
+        await ctx.reply('Welcome to reminder bot!');
     })
 
     await bot.launch();

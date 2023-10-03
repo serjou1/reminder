@@ -3,7 +3,9 @@ import { Thought } from './thought';
 
 @Entity()
 export class BotUser {
-    @PrimaryColumn()
+    @PrimaryColumn({
+        type: 'bigint'
+    })
     userId: number;
 
     @OneToMany(() => Thought, (thought) => thought.user)
