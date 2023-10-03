@@ -10,7 +10,7 @@
     "typeorm": "^0.3.17"
   },
   "scripts": {
-    "start": "node ./build/index.ts",
+    "start": "node ./build/index.js",
     "build": "rimraf build && tsc -p tsconfig.json"
   }
 }
