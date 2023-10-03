@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@types/node": "^20.8.2",
+    "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
   },
   "dependencies": {
@@ -9,7 +10,7 @@
     "typeorm": "^0.3.17"
   },
   "scripts": {
-     "start": "node ./build/index.ts",
-     "build": "rimraf build && tsc -p tsconfig.json"
+    "start": "node ./build/index.ts",
+    "build": "rimraf build && tsc -p tsconfig.json"
   }
 }
