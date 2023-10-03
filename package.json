@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.8.2",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "cron": "^3.0.0",
+    "telegraf": "^4.14.0",
+    "typeorm": "^0.3.17"
+  },
+  "scripts": {
+     "start": "node ./build/index.ts",
+     "build": "rimraf build && tsc -p tsconfig.json"
+  }
+}
