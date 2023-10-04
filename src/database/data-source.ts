@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { BotUser } from "./entities/bot-user";
+import { DefaultThought } from "./entities/default-thought";
 import { Thought } from "./entities/thought";
 
 export let AppDataSource: DataSource;
@@ -17,7 +18,8 @@ export const initizlizeDataSource = async () => {
         logging: false,
         entities: [
             BotUser,
-            Thought
+            Thought,
+            DefaultThought
         ],
         subscribers: [],
         charset: 'utf8mb4'

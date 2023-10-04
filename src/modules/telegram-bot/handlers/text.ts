@@ -9,7 +9,10 @@ const textHandlers: {
 export const textHandler = async (ctx: ContextType) => {
     const user = await getUserFromContext(ctx);
     
-    await textHandlers[user.state](user, ctx);
+    const handler = textHandlers[user.state];
+    if (handler) {
+        await handler(user, ctx);
+    }
 };
 
 export const setTextHandler = (
