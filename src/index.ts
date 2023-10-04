@@ -10,7 +10,6 @@ const start = async () => {
     })
 
     await initizlizeDataSource()
-
     await telegramBot.initialize();
     reminder.initialize();
 };

@@ -10,6 +10,14 @@ export const getUsers = async (
     });
 };
 
+export const getUsersWithThoughts = async (): Promise<BotUser[]> => {
+    return await AppDataSource.getRepository(BotUser).find({
+        relations: {
+            thoughts: true
+        }
+    });
+}
+
 export const saveUser = async (user: BotUser) => {
     await AppDataSource.getRepository(BotUser).save(user);
 }
