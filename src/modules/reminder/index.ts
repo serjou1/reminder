@@ -20,6 +20,6 @@ export const initialize = () => {
         } catch (e) { 
             console.log(e);
         }
-    });
+    }, null, true, "Europe/Kiev");
     job.start();
 };
