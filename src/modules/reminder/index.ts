@@ -13,10 +13,6 @@ export const initialize = () => {
             const defaultThoughts = await getDefaultThoughts();
             
             for (const user of users) {
-                if (user.thoughts.length === 0) {
-                    continue;
-                }
-                
                 const randomThought = getRandomElement([...user.thoughts, ...defaultThoughts]);
     
                 await telegramBot.sendThought(randomThought, user);
