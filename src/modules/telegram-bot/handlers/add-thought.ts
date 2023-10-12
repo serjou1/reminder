@@ -2,11 +2,12 @@ import { BotUser } from "../../../database/entities/bot-user";
 import { Thought } from "../../../database/entities/thought";
 import { saveUser } from "../../../database/repositories/bot-users-repository";
 import { saveThought } from "../../../database/repositories/thoughts-repository";
+import { ADD_THOUGHT_BT } from "../constants/button-commands";
 import { ADD_THOUGHT, NONE } from "../constants/user-states";
 import { ContextType } from "../context-type";
 import { registerCommand } from "../services/commands-register";
 import { getUserFromContext } from "../services/users-helper";
-import { setTextHandler } from "./text";
+import { setButtonHandler, setTextHandler } from "./text";
 
 export const registerAddThoughtHandler = () => {
     registerCommand(
@@ -15,6 +16,7 @@ export const registerAddThoughtHandler = () => {
         addThought
     );
 
+    setButtonHandler(ADD_THOUGHT_BT, addThought);
     setTextHandler(ADD_THOUGHT, textHandler);
 };
 
